@@ -37,3 +37,8 @@ class Stack {
     return temp
   }
 }
+
+let myStack = new Stack(7)
+myStack.push(23)
+myStack.push(3)
+myStack.push(11)
