@@ -1,41 +1,48 @@
 class Node {
-    constructor(value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
+  constructor(value) {
+    this.value = value
+    this.left = null
+    this.right = null
+  }
 }
 
 class BST {
-    constructor() {
-        this.root = null;
+  constructor() {
+    this.root = null
+  }
+
+  insert(value) {
+    const newNode = new Node(value)
+    if (this.root === null) {
+      this.root = newNode
+      return this
     }
 
-    insert(value) {
-        if (this.root === null) {
-            const newNode = new Node;
-            this.root = newNode;
-            return this;
+    let temp = this.root
+    while (true) {
+      if (newNode.value === temp.value) return undefined
+      if (newNode.value < temp.value) {
+        if (!temp.left) {
+          temp.left = newNode
+          return this
         }
-
-        let temp = this.root;
-        while (true) {
-            if (newNode.value < temp.value){
-                if (!temp.left) {
-                   temp.left = newNode;
-                   return newNode;
-                }
-                if (temp.left.value === newNode.value) return undefined;
-                temp = temp.left;
-            } else {
-                if (!temp.right) {
-                   temp.right = newNode;
-                   return newNode;
-                }
-                if (temp.right.value === newNode.value) return undefined;
-                temp = temp.right;
-            }
+        temp = temp.left
+      } else {
+        if (!temp.right) {
+          temp.right = newNode
+          return this
         }
-        
+        temp = temp.right
+      }
     }
+  }
 }
+
+let myTree = new BST()
+myTree.insert(47)
+myTree.insert(21)
+myTree.insert(76)
+myTree.insert(18)
+// myTree.insert(27)
+myTree.insert(52)
+myTree.insert(82)
