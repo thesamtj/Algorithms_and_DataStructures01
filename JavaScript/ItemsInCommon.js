@@ -30,4 +30,3 @@ itemsInCommonObject(array1, array3);
 itemsInCommonNormal(array1, array2);
 
 console.log(`${itemsInCommonObject(array1, array3)}--${itemsInCommonNormal(array1, array2)}`);
-
