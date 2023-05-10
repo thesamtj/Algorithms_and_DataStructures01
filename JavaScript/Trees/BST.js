@@ -38,21 +38,49 @@ class BST {
   }
 
   contains(value) {
-    if (!this.root) return false;
+    if (!this.root) return false
 
-    let temp = this.root;
+    let temp = this.root
     while (temp) {
       if (value < temp.value) {
-        temp = temp.left;
+        temp = temp.left
       } else if (value > temp.value) {
-        temp = temp.right;
+        temp = temp.right
       } else {
-        return true;
+        return true
       }
     }
-    return false;
+    return false
   }
-  
+
+  BFS() {
+    let currentNode = this.root
+    let results = []
+    let queue = []
+    queue.push(currentNode)
+
+    while (queue.length) {
+      currentNode = queue.shift()
+      results.push(currentNode.value)
+      if (currentNode.left) queue.push(currentNode.left)
+      if (currentNode.right) queue.push(currentNode.right)
+    }
+
+    return results
+  }
+
+  DFSPreOrder() {
+    let results = []
+
+    function traverse(currentNode) {
+      results.push(currentNode.value)
+      if (currentNode.left) traverse(currentNode.left)
+      if (currentNode.right) traverse(currentNode.right)
+    }
+
+    traverse(this.root)
+    return results
+  }
 }
 
 let myTree = new BST()
