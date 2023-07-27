@@ -23,7 +23,6 @@ function palindrome(str) {
 //   });
 // }
 
-
 // --- Using array every function
 // Reduce loop by half (to be further improved on)
 // function palindrome(str) {
@@ -33,7 +32,7 @@ function palindrome(str) {
 //   for (const i in strArray) {
 //     if (strArray[i] !== strArray[strLength - i - 1]) {
 //         return false;
-//     } 
+//     }
 
 //     if (i => strLength - i - 1) {
 //         return true;
