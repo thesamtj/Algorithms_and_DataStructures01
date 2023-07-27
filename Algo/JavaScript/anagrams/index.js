@@ -16,12 +16,12 @@ function anagrams(stringA, stringB) {
   let charMapB = buildCharMap(stringB);
 
   if (Object.keys(charMapA).length !== Object.keys(charMapB).length) {
-    return false
+    return false;
   }
 
   for (const key in charMapA) {
     if (charMapA[key] !== charMapB[key]) {
-        return false;
+      return false;
     }
   }
 
@@ -29,8 +29,8 @@ function anagrams(stringA, stringB) {
 }
 
 function buildCharMap(str) {
-    let charMap = {};
-    str.replace(/[^\w]/g, "").toLowerCase();
+  let charMap = {};
+  str.replace(/[^\w]/g, "").toLowerCase();
 
   for (const c of str) {
     charMap[c] = charMap[c] + 1 || 1;
