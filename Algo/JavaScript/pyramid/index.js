@@ -18,8 +18,8 @@
 
 // --- Iterative solution
 function pyramid(n) {
-    let colLength = 2 * n - 1
-    let midPoint = Math.floor(colLength / 2);
+  let colLength = 2 * n - 1;
+  let midPoint = Math.floor(colLength / 2);
 
   for (let row = 0; row < n; row++) {
     let level = "";
@@ -31,7 +31,7 @@ function pyramid(n) {
         level += " ";
       }
     }
-    console.log(level)
+    console.log(level);
   }
 }
 
