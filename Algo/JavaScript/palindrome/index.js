@@ -16,7 +16,7 @@ function palindrome(str) {
 }
 
 // --- Using array every function
-// Not a very efficient solution cos it does twice more work
+// Not a very efficient solution cos it does twice more work (double comparison)
 // function palindrome(str) {
 //   return str.split("").every((val, i) => {
 //     return val === str[str.length - i - 1];
