@@ -22,20 +22,19 @@
 // }
 
 // Using Math.abs function
-// function reverseInt(n) {
-//   let absValue = Math.abs(n);       
-//   let reversed = absValue.toString().split('').reverse().join('');
-//   let num = Number(reversed);  
-
-//   return n < 0 ? num * -1 : num;
-// }
-
-
-// Using Math.sign function
 function reverseInt(n) {
-  const reversed = n.toString().split("").reverse().join("");
+  let reversed = n.toString().split('').reverse().join('');
+  let num = parseInt(reversed);  
 
-  return parseInt(reversed) * Math.sign(n);
+  return n < 0 ? num * -1 : num;
 }
+
+
+// Using Math.sign & parseInt -- The parse methods convert a string to a number piece by piece -- function
+// function reverseInt(n) {
+//   const reversed = n.toString().split("").reverse().join("");
+
+//   return parseInt(reversed) * Math.sign(n);
+// }
 
 module.exports = reverseInt;
