@@ -21,6 +21,15 @@
 //   return parseInt(reversed);
 // }
 
+// Using Math.abs function
+// function reverseInt(n) {
+//   let absValue = Math.abs(n);       
+//   let reversed = absValue.toString().split('').reverse().join('');
+//   let num = Number(reversed);  
+
+//   return n < 0 ? num * -1 : num;
+// }
+
 
 // Using Math.sign function
 function reverseInt(n) {
