@@ -32,24 +32,24 @@
 // }
 
 // Using a max tracker (condensed)
-function maxChar(str) {
-  let charMap = {};
-  let max = 0;
-  let maxChar = "";
+// function maxChar(str) {
+//   let charMap = {};
+//   let max = 0;
+//   let maxChar = "";
 
-  for (const c of str) {
-    charMap[c] = charMap[c] + 1 || 1;
-  }
+//   for (const c of str) {
+//     charMap[c] = charMap[c] + 1 || 1;
+//   }
 
-  for (const char in charMap) {
-    if (charMap[char] > max) {
-      max = charMap[char];
-      maxChar = char;
-    }
-  }
+//   for (const char in charMap) {
+//     if (charMap[char] > max) {
+//       max = charMap[char];
+//       maxChar = char;
+//     }
+//   }
 
-  return maxChar;
-}
+//   return maxChar;
+// }
 
 // Using a max tracker & hasOwnProperty
 // function maxChar(str) {
@@ -96,5 +96,18 @@ function maxChar(str) {
 
 //   return Object.keys(charMap).filter((a) => charMap[a] === max)[0];
 // }
+
+// Using a Math max & find function
+function maxChar(str) {
+  let charMap = {};
+
+  for (const c of str) {
+    charMap[c] = charMap[c] + 1 || 1;
+  }
+
+  let max = Math.max(...Object.values(charMap));
+
+  return Object.keys(charMap).find((a) => charMap[a] === max);
+}
 
 module.exports = maxChar;
