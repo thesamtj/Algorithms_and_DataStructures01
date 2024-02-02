@@ -10,18 +10,29 @@
 // --- Solutions
 
 // --- Using for...of loop
-function capitalize(str) {
-  let result = str[0].toUpperCase();
+// function capitalize(str) {
+//   let result = str[0].toUpperCase();
 
-  for (let i = 1; i < str.length; i++) {
-    if (str[i - 1] === " ") {
-      result += str[i].toUpperCase();
-    } else {
-      result += str[i];
-    }
+//   for (let i = 1; i < str.length; i++) {
+//     if (str[i - 1] === " ") {
+//       result += str[i].toUpperCase();
+//     } else {
+//       result += str[i];
+//     }
+//   }
+
+//   return result;
+// }
+
+// --- Using for...of loop 2nd approach
+function capitalize(str) {
+  let words = [];
+
+  for (let word of str.split(" ")) {
+    words.push(word[0].toUpperCase() + word.slice(1))
   }
 
-  return result;
+  return words.join(" ");
 }
 
 // --- Using declarative methods (split, map, join)
